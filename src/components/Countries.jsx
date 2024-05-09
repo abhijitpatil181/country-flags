@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Tile from "./Tile";
 
 const Countries = () => {
   const [countries, setCountries] = useState([]);
@@ -10,8 +11,6 @@ const Countries = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  console.log("countries", countries);
-
   return (
     <>
       <div
@@ -20,31 +19,16 @@ const Countries = () => {
           justifyContent: "center",
           alignItems: "center",
           flexWrap: "wrap",
+          height: "100vh",
         }}
       >
         {countries.map((country) => (
-          <div
-            key={country.car.ccn3}
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "column",
-              border: "1px solid grey",
-              borderRadius: "8px",
-              padding: "1rem",
-              margin: "0.5rem",
-              height: "250px",
-              width: "200px",
-            }}
-          >
-            <img
-              src={country.flags.png}
-              alt={country.flags.alt}
-              style={{ width: "150px", height: "200px" }}
-            />
-            <h4>{country.name.common}</h4>
-          </div>
+          <Tile
+            key={country.cca3}
+            imgUrl={country.flags.svg}
+            countryName={country.name.common}
+            alt={country.flags.alt}
+          />
         ))}
       </div>
     </>
