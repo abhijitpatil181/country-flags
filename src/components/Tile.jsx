@@ -11,14 +11,14 @@ const Tile = ({ imgUrl, countryName, alt }) => {
           borderRadius: "8px",
           padding: "1rem",
           margin: "0.5rem",
-          height: "200px",
-          width: "200px",
+          height: "150px",
+          width: "150px",
         }}
       >
         <img
           src={imgUrl}
           alt={alt}
-          style={{ width: "150px", height: "200px" }}
+          style={{ width: "100px", height: "100px" }}
         />
         <h4>{countryName}</h4>
       </div>
